@@ -1,5 +1,8 @@
 const puppeteer = require('puppeteer');
 const _ = require('lodash')
+const express = require('express')
+const app = express()
+let reportTunnel = {};
 // const mongoose = require('mongoose');
 // const {Schema} = mongoose;
 
@@ -61,11 +64,20 @@ async function start() {
 
     })
     console.log(report)
+    reportTunnel = report;
     // await page.screenshot({path:"apnews.png", fullPage:true})
     await browser.close()
 }
 
 start()
+
+app.get('/', (req,res)=>{
+    res.json(reportTunnel)
+})
+
+app.listen(3000,()=>{
+    console.log("scraper app front end listening port 3000")
+})
 
 //make a web scraper for apnews. 
 //scrape apnews at 6am, the trending news, etc.
