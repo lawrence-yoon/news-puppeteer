@@ -1,8 +1,11 @@
+body {
+  font-family: 'VT323', monospace;
+}
+
 p {
   margin:0;
 }
 
 .customCard {
-  margin: 2px
+  margin-bottom: 2px;
 }
-

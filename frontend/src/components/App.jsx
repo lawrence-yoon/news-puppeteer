@@ -46,9 +46,13 @@ function createEntry(testEntry){
 function App() {
   return (
     <div className="container-sm text-success">
-      <h1>APNews Scraper</h1>
-      <h6>APNews Scraper provides world news, plain and simple. No ads, no bias.</h6>
-      {testArrayReal.map(createEntry)}
+      <div className="titleText">
+        <h1>APNews Scraper</h1>
+        <h6>APNews Scraper provides world news, plain and simple. No ads, no bias.</h6>
+      </div>    
+      <div className="articleCards">
+        {testArrayReal.map(createEntry)}
+      </div>
     </div>
   );
 }
