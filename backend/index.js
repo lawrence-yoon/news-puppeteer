@@ -3,6 +3,9 @@ const _ = require('lodash')
 const express = require('express')
 const app = express()
 let reportTunnel = {};
+const cors = require('cors');
+
+app.use(cors());
 // const mongoose = require('mongoose');
 // const {Schema} = mongoose;
 
@@ -78,11 +81,15 @@ start()
 //link this to mongod server
 
 app.get('/', (req,res)=>{
+    res.json("web scraper")
+})
+
+app.get('/api', (req,res)=>{
     res.json(reportTunnel)
 })
 
-app.listen(3000,()=>{
-    console.log("scraper app front end listening port 3000")
+app.listen(3001,()=>{
+    console.log("scraper app back end listening port 3001")
 })
 
 //is there a device driver for like scrolling led signs. can i pass it a json to display a message? looking into it right now.

@@ -1,34 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
 import "./App.css";
-import './testarrayreal'
-import testArrayReal from "./testarrayreal";
-
-// const testArray = [
-//   {
-//     title:"title01",
-//     author:"author01",
-//     summary:"summary01",
-//     timestamp:"timestamp01"
-//   },
-//   {
-//     title:"title02",
-//     author:"author02",
-//     summary:"summary02",
-//     timestamp:"timestamp02"
-//   },
-//   {
-//     title:"title03",
-//     author:"author03",
-//     summary:"summary03",
-//     timestamp:"timestamp03"
-//   },
-//   {
-//     title:"title04",
-//     author:"author04",
-//     summary:"summary04",
-//     timestamp:"timestamp04"
-//   }
-// ];
+import testArrayReal from './testarrayreal';
 
 function createEntry(testEntry){
   return (
@@ -42,8 +15,10 @@ function createEntry(testEntry){
 }
 
 
-
 function App() {
+  fetch('http://localhost:3001/api')
+    .then(response=>response.json())
+    .then(data=>console.log(data))
   return (
     <div className="container-sm text-success">
       <div className="titleText">
