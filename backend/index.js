@@ -17,6 +17,7 @@ let reportTunnel = {};
 // })
 
 async function start() {
+    console.log("scraper called")
     const titleArray = [];
     const authorArray = [];
     const summaryArray = [];
@@ -66,11 +67,15 @@ async function start() {
     })
     // console.log(report)
     reportTunnel = report;
+
     // await page.screenshot({path:"apnews.png", fullPage:true})
     await browser.close()
-}
 
+    setTimeout(start, 21600000)
+}
 start()
+// start()
+
 //save url of scraper execution, save url for each story, offer redirect if clicked. iframe?
 //need to make restful, along with front end. need to link this asap so that i can design front end. going to be very plain. 
 //create buttons to be able to start a scrape? maybe for admin
