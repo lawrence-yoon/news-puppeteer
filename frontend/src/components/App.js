@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./App.css";
 import testArrayReal from './testarrayreal';
 
@@ -16,9 +16,19 @@ function createEntry(testEntry){
 
 
 function App() {
-  fetch('http://localhost:3001/api')
-    .then(response=>response.json())
-    .then(data=>console.log(data))
+  const [initialState, setInitialState] = useState([])
+
+  // fetch('http://localhost:3001/api')
+  //   .then(response=>response.json())
+  //   .then(data=>console.log(data))
+  useEffect(()=>{
+    fetch('/api/')
+    .then(res=>{
+      if(res.ok){
+        return res.json()
+      }
+    }).then(jsonResponse => setInitialState(jsonResponse[0]))
+  })
   return (
     <div className="container-sm text-success">
       <div className="titleText">
@@ -26,7 +36,7 @@ function App() {
         <h6>APNews Scraper provides world news, plain and simple. No ads, no bias.</h6>
       </div>    
       <div className="articleCards">
-        {testArrayReal.map(createEntry)}
+        {initialState.map(createEntry)}
       </div>
     </div>
   );

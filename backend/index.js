@@ -3,9 +3,7 @@ const _ = require('lodash')
 const express = require('express')
 const app = express()
 let reportTunnel = {};
-const cors = require('cors');
 
-app.use(cors());
 // const mongoose = require('mongoose');
 // const {Schema} = mongoose;
 
