@@ -27,7 +27,8 @@ function App() {
       if(res.ok){
         return res.json()
       }
-    }).then(jsonResponse => setInitialState(jsonResponse[0]))
+    })
+    .then(jsonResponse => setInitialState(jsonResponse[0]))
   })
   return (
     <div className="container-sm text-success">
