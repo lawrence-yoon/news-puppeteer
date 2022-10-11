@@ -33,8 +33,8 @@ function App() {
   return (
     <div className="container-sm text-success">
       <div className="titleText">
-        <h1>APNews Scraper</h1>
-        <h6>APNews Scraper provides world news, plain and simple. No ads, no bias.</h6>
+        <h1>Outside News</h1>
+        <h6>world news web scraper</h6>
       </div>    
       <div className="articleCards">
         {initialState.map(createEntry)}
