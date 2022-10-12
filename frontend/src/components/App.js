@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useEffect, useState} from 'react';
 import "./App.css";
-import testArrayReal from './testarrayreal';
 
 function createEntry(testEntry){
   return (
@@ -18,9 +17,6 @@ function createEntry(testEntry){
 function App() {
   const [initialState, setInitialState] = useState([])
 
-  // fetch('http://localhost:3001/api')
-  //   .then(response=>response.json())
-  //   .then(data=>console.log(data))
   useEffect(()=>{
     fetch('/api/')
     .then(res=>{
@@ -31,10 +27,10 @@ function App() {
     .then(jsonResponse => setInitialState(jsonResponse[0]))
   })
   return (
-    <div className="container-sm text-success">
+    <div className="container-sm text-success viewMain">
       <div className="titleText">
         <h1>Outside News</h1>
-        <h6>world news web scraper</h6>
+        <h6>Minimalist world news web scraper</h6>
       </div>    
       <div className="articleCards">
         {initialState.map(createEntry)}
@@ -44,17 +40,3 @@ function App() {
 }
 
 export default App;
-//make different module for the card thing, where a card
-//is generated from stuff in a database.
-//for now, try to pass the data from backend, and generate cards
-
-//add a text to speech. it will read story title, author, and summary blurb
-
-//make a hamburger menu
-//option1: trending
-//option2: US
-//option3: World
-
-//i need to decide if ppl should have access to all the database.
-//i am thinking, i will only give them access to last 100 per option.
-//for now, i will keep it running and scrape daily, show all that was scraped.

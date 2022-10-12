@@ -6,6 +6,15 @@ p {
   margin:0;
 }
 
+b {
+  font-size: 24px;
+}
+
 .customCard {
   margin-bottom: 2px;
 }
+
+.viewMain {
+  margin-bottom: 10px;
+}
+
