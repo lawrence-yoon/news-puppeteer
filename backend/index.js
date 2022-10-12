@@ -60,6 +60,6 @@ if(process.env.NODE_ENV === 'production'){
     app.get('/', (req, res) => res.send('Please set to NODE_ENV to production'))
 }
 
-app.listen(3001,()=>{
+app.listen(process.env.PORT || 3001,()=>{
     console.log("scraper app back end listening port 3001")
 })
