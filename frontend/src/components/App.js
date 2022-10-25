@@ -7,7 +7,7 @@ function createEntry(testEntry){
     <div className="row bg-dark text-success border border-success customCard">
       <p><b>{testEntry.title}</b></p>
       <p>{testEntry.author}</p>
-      <p>{testEntry.summary}</p>
+      <a href={testEntry.hyperlink}>Link to Article</a>
       <p>{testEntry.article_timestamp}</p>
     </div>
   )
