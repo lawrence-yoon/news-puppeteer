@@ -29,7 +29,7 @@ async function start() {
 
         titleArray = [...document.querySelectorAll("div.CardHeadline h2")].map(x=>(x.textContent));
         timeArray = [...document.querySelectorAll("div.CardHeadline span.Timestamp")].map(t=>(t.getAttribute("title")));
-        linkArray = [...document.querySelectorAll("div.CardHeadline a:first-child")].map(s=>(s.href));
+        linkArray = [...document.querySelectorAll("div.CardHeadline > a")].map(s=>(s.href));
         authorArray = [...document.querySelectorAll("div.CardHeadline span:first-child")].map(a=>a.textContent)
         packageArray = _.zipWith(titleArray,authorArray,linkArray,timeArray, function(title,author,hyperlink,article_timestamp){
             return {
